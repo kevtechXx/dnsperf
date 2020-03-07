@@ -22,7 +22,7 @@
 #87.118.100.175 | German Privacy Foundation e.V. | Verein löst sich auf, eventuell sind die server bald nicht mehr erreichbar
 
 # ------------ config ------------ #
-dnsServer = ["192.168.1.2","1.1.1.1","8.8.8.8","9.9.9.9","192.168.1.1"] #DNS-Server die getestet werden sollen.
+dnsServer = ["192.168.1.2", "1.1.1.1", "8.8.8.8", "9.9.9.9", "198.101.242.72", "91.239.100.100"] #DNS-Server die getestet werden sollen.
 
 domains = ["google.com", "amazon.com", "facebook.com"] #Domains die von den DNS-Servern aufgelöst werden sollen.
 
@@ -32,6 +32,9 @@ anzahldurchlaeufe = 1 #anzahl von tests
 import dns.resolver
 import sys
 import time
+
+times = []
+servers = []
 
 for e in range(anzahldurchlaeufe):
     for i in dnsServer:
@@ -47,9 +50,16 @@ for e in range(anzahldurchlaeufe):
             except Exception as e:
                 avg = avg + 1000
         avg = avg / len(domains)
+        times.append(avg)
+        servers.append(i)
         print(i + "   -   "+str(avg))
     print("Test "+str(e+1)+" Completed")
 
+minimal = min(times)
+for i in range(len(servers)):
+    if times[i] == minimal:
+        print("\nDu solltest " + servers[i] + " als DNS-Server bunutzen.")
 
 print("\nProcess finished")
+
 sys.exit()
