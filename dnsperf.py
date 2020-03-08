@@ -52,14 +52,14 @@ for e in range(anzahldurchlaeufe):
         avg = avg / len(domains)
         times.append(avg)
         servers.append(i)
-        print(i + "   -   "+str(avg*1000))
+        print(i + "   -   "+str(avg*1000)+" ms")
     if anzahldurchlaeufe > 1:
         print("Test "+str(e+1)+" Completed")
 
 minimal = min(times)
 for i in range(len(servers)):
     if times[i] == minimal:
-        print("\nDu solltest " + servers[i] + " als DNS-Server bunutzen.")
+        print("\nDu solltest " + servers[i] + " als DNS-Server benutzen.")
 
 print("\nProcess finished")
 
