@@ -52,8 +52,9 @@ for e in range(anzahldurchlaeufe):
         avg = avg / len(domains)
         times.append(avg)
         servers.append(i)
-        print(i + "   -   "+str(avg))
-    print("Test "+str(e+1)+" Completed")
+        print(i + "   -   "+str(avg*1000))
+    if anzahldurchlaeufe > 1:
+        print("Test "+str(e+1)+" Completed")
 
 minimal = min(times)
 for i in range(len(servers)):
