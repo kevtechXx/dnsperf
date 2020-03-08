@@ -9,3 +9,4 @@ This is a DNS-Server Performance test script. Writed in Python 3. <br/>
 ### Installing Python
 #### Windows
 * Download [Python](https://www.python.org/downloads/)
+![](https://github.com/kevtechXx/dnsperf/blob/master/images_readme_file/python_download_page.PNG)
