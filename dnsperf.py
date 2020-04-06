@@ -73,7 +73,7 @@ for e in range(anzahldurchlaeufe):
 minimal = min(times)
 for i in range(len(servers)):
     if times[i] == minimal:
-        print("\nDu solltest " + servers[i] + " als DNS-Server bunutzen.")
+        print("\n" + servers[i] + " is the fastest")
 
 print("\nProcess finished")
 
