@@ -1,5 +1,6 @@
 # DNS performance test script
 This is a DNS-Server Performance test script. Writed in Python 3. <br/>
+### Use beta branch
 ##### some comments in the code are in german, sorry.
 ## Requierements
 * Python 3.5.0 (or later)
